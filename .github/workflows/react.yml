@@ -33,7 +33,10 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - run: npm run build --if-present
+      - name: build react app
+        env:
+          REACT_APP_HOTELSAFE_PIN: ${{ secrets.PIN }}
+        run: npm run build --if-present
 
       - uses: actions/upload-artifact@v2
         with:

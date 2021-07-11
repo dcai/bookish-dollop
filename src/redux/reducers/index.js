@@ -5,7 +5,7 @@ const { keypress, clear, enter } = actions;
 
 const initState = {
   status: 'locked',
-  secret: '0000',
+  secret: process.env.REACT_APP_HOTELSAFE_PIN || '0000',
   enteredNumbers: [],
   display: null,
 };
